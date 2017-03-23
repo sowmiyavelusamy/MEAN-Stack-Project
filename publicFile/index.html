@@ -1,0 +1,56 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<title>Contact List App </title>
+</head>
+<body>
+<div class="container" ng-controller="contactCtrl">
+{{message}}
+  	<h1>Contact List Applications</h1>
+
+
+  	<table class="contactTable"  style="width:100%">
+  	    <thead>
+  	 	    <tr>
+  	 		   <th>FirstName</th>
+  	 		   <th>Email</th>
+  	 		   <th>Mobile</th>
+           <th>Action</th>
+  	 	    </tr>
+  	 	</thead>
+  	 	<tbody>
+        <tr>
+         
+          <td><input class="form-control" ng-model="contacts.name"></td>
+          <td><input class="form-control" ng-model="contacts.email"></td>
+          <td><input class="form-control" ng-model="contacts.mobile"></td>
+          <td><button calss="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
+    
+        </tr>
+       <tr ng-repeat="contacts in contactList">
+              <td>{{contacts.name}}</td>
+              <td>{{contacts.email}}</td>
+              <td>{{contacts.mobile}}</td>
+          </tr>
+        
+  	 	   
+  	 	</tbody>
+  	</table>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+<script src="/node_modules/angular/angular.js"></script>
+</body>
+</html>
+
+
+
+
+
